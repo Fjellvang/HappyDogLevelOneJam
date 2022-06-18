@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eeea45584e77444aad0e3fddf5f8d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 2385203636404316112}
   rb: {fileID: -784840474707916640}
   moveSpeed: 0
   dogPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
@@ -142,5 +143,10 @@ PrefabInstance:
 --- !u!4 &8645185899243814314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4b814779b0e5d6144889498f87fdc462, type: 3}
+  m_PrefabInstance: {fileID: 8102934194861759041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2385203636404316112 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 4b814779b0e5d6144889498f87fdc462, type: 3}
   m_PrefabInstance: {fileID: 8102934194861759041}
   m_PrefabAsset: {fileID: 0}

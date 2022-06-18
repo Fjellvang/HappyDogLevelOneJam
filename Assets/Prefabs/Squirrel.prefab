@@ -133,6 +133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squirrel
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 4b814779b0e5d6144889498f87fdc462, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0b24faee9a6459b4699c2401b9d670b5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b814779b0e5d6144889498f87fdc462, type: 3}
 --- !u!4 &8645185899243814314 stripped

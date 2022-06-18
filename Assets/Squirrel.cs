@@ -18,8 +18,19 @@ public class Squirrel : MonoBehaviour
 
     private IEnumerator Run()
     {
-        transform.Rotate(new Vector3(0f, UnityEngine.Random.Range(0, 360), 0f));
-        Debug.Log(transform.rotation.eulerAngles);
+        if (dogIsFarAway())
+        {
+            yield return new WaitForSeconds(1);
+            // IDLE HERE
+            transform.Rotate(new Vector3(0f, UnityEngine.Random.Range(0, 360), 0f), Space.World);
+        }
+        else
+        {
+            transform.LookAt(dogPosition.Vector3);
+            transform.Rotate(0, 180, 0);
+        }
+        
+        // START WALKING HERE
         float timePassed = 0;
         float endTime = 1;
         while (timePassed < endTime)
@@ -29,19 +40,11 @@ public class Squirrel : MonoBehaviour
             yield return null;
         }
 
-        if (dogIsFarAway())
-        {
-            yield return new WaitForSeconds(1);
-        } else
-        {
-            transform.rotation = Quaternion.LookRotation(transform.position, dogPosition.Vector3);
-        }
-        
         StartCoroutine(Run());
     }
 
     private bool dogIsFarAway()
     {
-        return Vector3.Distance(transform.position, dogPosition.Vector3) > 5f;
+        return Vector3.Distance(transform.position, dogPosition.Vector3) > 10f;
     }
 }

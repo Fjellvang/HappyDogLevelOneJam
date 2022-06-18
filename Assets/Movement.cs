@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     private float rotation;
 
+    [SerializeField] Vector3Variable savedPosition;
+
     private void Update()
     {
         rotation = Input.GetAxis("Horizontal") * rotationSpeed;
@@ -24,6 +26,7 @@ public class Movement : MonoBehaviour
 
     private void LateUpdate()
     {
+        savedPosition.Vector3 = transform.position;
         //rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed);
     }
 }

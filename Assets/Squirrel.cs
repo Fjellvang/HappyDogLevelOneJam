@@ -9,14 +9,17 @@ public class Squirrel : MonoBehaviour
     [Range(0.1f, 100f)]
     [SerializeField] private float moveSpeed;
 
+    [SerializeField] private Vector3Variable dogPosition;
+
     private void Start()
     {
-        StartCoroutine(RunAround());
+        StartCoroutine(Run());
     }
 
-    private IEnumerator RunAround()
+    private IEnumerator Run()
     {
-        transform.Rotate(new Vector3(0, UnityEngine.Random.Range(0, 360)));
+        transform.Rotate(new Vector3(0f, UnityEngine.Random.Range(0, 360), 0f));
+        Debug.Log(transform.rotation.eulerAngles);
         float timePassed = 0;
         float endTime = 1;
         while (timePassed < endTime)
@@ -25,7 +28,20 @@ public class Squirrel : MonoBehaviour
             timePassed += Time.deltaTime;
             yield return null;
         }
-        yield return new WaitForSeconds(1);
-        StartCoroutine(RunAround());
+
+        if (dogIsFarAway())
+        {
+            yield return new WaitForSeconds(1);
+        } else
+        {
+            transform.rotation = Quaternion.LookRotation(transform.position, dogPosition.Vector3);
+        }
+        
+        StartCoroutine(Run());
+    }
+
+    private bool dogIsFarAway()
+    {
+        return Vector3.Distance(transform.position, dogPosition.Vector3) > 5f;
     }
 }

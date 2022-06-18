@@ -13,27 +13,29 @@ public class Squirrel : MonoBehaviour
     [SerializeField] private Vector3Variable dogPosition;
     [SerializeField] private IntVariable dogExcitement;
 
+    private Coroutine roaming;
+
     private void Start()
     {
-        StartCoroutine(Run());
+        roaming = StartCoroutine(Roam());
     }
 
-    private IEnumerator Run()
+    private void Update()
+    {
+        if (!dogIsFarAway())
+        {
+            StopCoroutine(roaming);
+            StartCoroutine(RunAway());
+        }
+    }
+
+    private IEnumerator Roam()
     {
         anim.SetBool("Run", false);
-        if (dogIsFarAway())
-        {
-            float wait = UnityEngine.Random.Range(1f, 2f);
-            yield return new WaitForSeconds(wait);
-            transform.Rotate(new Vector3(0f, UnityEngine.Random.Range(0, 360), 0f), Space.World);
-            yield return new WaitForSeconds(wait);
-        }
-        else
-        {
-            StartCoroutine(RunAway());
-            yield break;
-        }
-
+        float wait = UnityEngine.Random.Range(1f, 2f);
+        yield return new WaitForSeconds(wait);
+        transform.Rotate(new Vector3(0f, UnityEngine.Random.Range(0, 360), 0f), Space.World);
+        yield return new WaitForSeconds(wait);
         
         anim.SetBool("Run", true);
 
@@ -47,7 +49,7 @@ public class Squirrel : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(Run());
+        roaming = StartCoroutine(Roam());
     }
 
     private IEnumerator RunAway()

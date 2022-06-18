@@ -14,11 +14,12 @@ public class SquirrelSpawner : MonoBehaviour
         {
             SpawnSquirrel();
         }
+        StartCoroutine(WaitAndSpawn());
     }
 
     private IEnumerator WaitAndSpawn()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(1);
         SpawnSquirrel();
     }
 

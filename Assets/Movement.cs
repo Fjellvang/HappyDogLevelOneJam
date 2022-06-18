@@ -16,14 +16,14 @@ public class Movement : MonoBehaviour
         rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         transform.Rotate(new Vector3(0, rotation, 0));
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W))
         {
-            rb.AddForce(transform.forward * 1000);            
+            rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);            
         }
     }
 
     private void LateUpdate()
     {
-        rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed);
+        //rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed);
     }
 }

@@ -7,10 +7,11 @@ namespace Assets.Script.States.HumanStates
         public override void OnEnterState(HumanController controller)
         {
             controller.transform.rotation = Quaternion.identity;
+            //controller.transform.localRotation = Quaternion.identity;
+            controller.rigidBody.angularVelocity = Vector3.zero;
             controller.rigidBody.constraints = 
                 UnityEngine.RigidbodyConstraints.FreezeRotationX |
                 UnityEngine.RigidbodyConstraints.FreezeRotationZ;
-            controller.transform.rotation = Quaternion.identity;
         }
         public override void Update(HumanController controller)
         {

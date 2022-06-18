@@ -9,7 +9,7 @@ namespace Assets.Script.States.HumanStates
 {
     public class HumanRagdollState : HumanBaseState
     {
-        public float timeToBeInState = 2f; //TODO: move to somewhere more configurable?
+        public float timeToBeInState = .5f; //TODO: move to somewhere more configurable?
         private float timeInState = 0f;
 
         public override void OnEnterState(HumanController controller)

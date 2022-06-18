@@ -14,7 +14,6 @@ public class HumanController : MonoBehaviour
     // Start is called before the first frame update
     private void OnEnable()
     {
-        Debug.Log("ON ENABLE");
         stateMachine = new HumanStateMachine(this);
         stateMachine.TransitionState(HumanBaseState.WalkingState);
     }

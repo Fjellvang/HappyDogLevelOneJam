@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 7c2eb059407098a488b43f4c7a437c1f
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 2574899601095102629
+    second: Armature|Dog ArmatureAction
   externalObjects: {}
   materials:
     materialImportMode: 2

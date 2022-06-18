@@ -21,6 +21,7 @@ public class SquirrelSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SpawnSquirrel();
+        StartCoroutine(WaitAndSpawn());
     }
 
     private void SpawnSquirrel()

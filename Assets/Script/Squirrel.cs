@@ -11,6 +11,7 @@ public class Squirrel : MonoBehaviour
     [SerializeField] private float moveSpeed;
 
     [SerializeField] private Vector3Variable dogPosition;
+    [SerializeField] private IntVariable dogExcitement;
 
     private void Start()
     {
@@ -19,24 +20,22 @@ public class Squirrel : MonoBehaviour
 
     private IEnumerator Run()
     {
-        anim.SetBool("Run", false);//set the animator to be idle
+        anim.SetBool("Run", false);
         if (dogIsFarAway())
         {
-            yield return new WaitForSeconds(1);
-            // IDLE HERE
-            
+            float wait = UnityEngine.Random.Range(1f, 2f);
+            yield return new WaitForSeconds(wait);
             transform.Rotate(new Vector3(0f, UnityEngine.Random.Range(0, 360), 0f), Space.World);
-            yield return new WaitForSeconds(2.5f);//pause before it staers moving again
+            yield return new WaitForSeconds(wait);
         }
         else
         {
-            transform.LookAt(dogPosition.Vector3);
-            transform.Rotate(0, 180, 0);
+            StartCoroutine(RunAway());
+            yield break;
         }
 
         
-        anim.SetBool("Run", true);//set the animator to be running
-        // START WALKING HERE
+        anim.SetBool("Run", true);
 
         float timePassed = 0;
         float endTime = 5;
@@ -49,6 +48,24 @@ public class Squirrel : MonoBehaviour
         }
 
         StartCoroutine(Run());
+    }
+
+    private IEnumerator RunAway()
+    {
+        dogExcitement.Value += 1;
+        transform.LookAt(dogPosition.Vector3);
+        transform.Rotate(0, 180, 0);
+        anim.SetBool("Run", true);
+        float timePassed = 0;
+        float endTime = 5;
+        while (timePassed < endTime)
+        {
+
+            rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed * 4f);
+            timePassed += Time.deltaTime;
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 
     private bool dogIsFarAway()

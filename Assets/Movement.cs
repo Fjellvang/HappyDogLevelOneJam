@@ -26,6 +26,10 @@ public class Movement : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (savedPosition == null)
+        {
+            return;
+        }
         savedPosition.Vector3 = transform.position;
         //rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed);
     }

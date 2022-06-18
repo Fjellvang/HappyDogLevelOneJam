@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2385203636404316112}
   rb: {fileID: -784840474707916640}
-  moveSpeed: 0
+  moveSpeed: 5
   dogPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
 --- !u!1001 &8102934194861759041
 PrefabInstance:

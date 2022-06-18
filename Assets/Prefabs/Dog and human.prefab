@@ -1558,7 +1558,7 @@ MonoBehaviour:
   rb: {fileID: 3880292752218653927}
   moveSpeed: 3
   rotationSpeed: 1.5
-  savedPosition: {fileID: 0}
+  savedPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
 --- !u!59 &3880292752218653944
 HingeJoint:
   m_ObjectHideFlags: 0

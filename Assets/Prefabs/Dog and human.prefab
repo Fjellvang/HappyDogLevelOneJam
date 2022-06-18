@@ -1444,7 +1444,7 @@ GameObject:
   - component: {fileID: 3880292752218653944}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1556,8 +1556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3880292752218653927}
-  moveSpeed: 3
-  rotationSpeed: 1.5
+  moveSpeed: 5
+  rotationSpeed: 2
   anim: {fileID: 5892343037876609949}
   savedPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
   excitement: {fileID: 11400000, guid: 896d5cd975e2b3a4ba5d37bd88bd77d3, type: 2}

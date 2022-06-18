@@ -1558,6 +1558,7 @@ MonoBehaviour:
   rb: {fileID: 3880292752218653927}
   moveSpeed: 3
   rotationSpeed: 1.5
+  anim: {fileID: 5892343037876609949}
   savedPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
 --- !u!59 &3880292752218653944
 HingeJoint:
@@ -2924,5 +2925,10 @@ PrefabInstance:
 --- !u!4 &515066302127962599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c2eb059407098a488b43f4c7a437c1f, type: 3}
+  m_PrefabInstance: {fileID: 49358656858299916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5892343037876609949 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 7c2eb059407098a488b43f4c7a437c1f, type: 3}
   m_PrefabInstance: {fileID: 49358656858299916}
   m_PrefabAsset: {fileID: 0}

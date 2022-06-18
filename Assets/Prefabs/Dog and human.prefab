@@ -1558,6 +1558,7 @@ MonoBehaviour:
   rb: {fileID: 3880292752218653927}
   moveSpeed: 3
   rotationSpeed: 1.5
+  anim: {fileID: 5892343037876609949}
   savedPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
 --- !u!59 &3880292752218653944
 HingeJoint:
@@ -2792,6 +2793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7274696527266737181}
+  - component: {fileID: 1108423356}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -2830,6 +2832,19 @@ Transform:
   m_Father: {fileID: 1730978775596295012}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108423356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4745899421780031882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123082635f9c59c47a35ed9d9bb212f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springValue: 0
 --- !u!1 &5729624359591391224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,5 +2943,10 @@ PrefabInstance:
 --- !u!4 &515066302127962599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c2eb059407098a488b43f4c7a437c1f, type: 3}
+  m_PrefabInstance: {fileID: 49358656858299916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5892343037876609949 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 7c2eb059407098a488b43f4c7a437c1f, type: 3}
   m_PrefabInstance: {fileID: 49358656858299916}
   m_PrefabAsset: {fileID: 0}

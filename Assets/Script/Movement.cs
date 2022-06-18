@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     [Range(0.1f, 10f)]
     [SerializeField] private float rotationSpeed;
     private float rotation;
+    [SerializeField] private Animator anim;
 
     [SerializeField] Vector3Variable savedPosition;
 
@@ -17,11 +18,7 @@ public class Movement : MonoBehaviour
     {
         rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         transform.Rotate(new Vector3(0, rotation, 0));
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);            
-        }
+        rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);            
     }
 
     private void LateUpdate()

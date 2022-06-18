@@ -1560,6 +1560,7 @@ MonoBehaviour:
   rotationSpeed: 1.5
   anim: {fileID: 5892343037876609949}
   savedPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
+  excitement: {fileID: 11400000, guid: 896d5cd975e2b3a4ba5d37bd88bd77d3, type: 2}
 --- !u!59 &3880292752218653944
 HingeJoint:
   m_ObjectHideFlags: 0

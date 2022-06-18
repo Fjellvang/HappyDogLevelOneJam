@@ -13,19 +13,19 @@ public class Squirrel : MonoBehaviour
     [SerializeField] private Vector3Variable dogPosition;
     [SerializeField] private IntVariable dogExcitement;
 
-    private Coroutine roaming;
-
+    private Coroutine behaviour;
+    private bool fleeing;
     private void Start()
     {
-        roaming = StartCoroutine(Roam());
+        behaviour = StartCoroutine(Roam());
     }
 
     private void Update()
     {
-        if (!dogIsFarAway())
+        if (dogIsClose() && fleeing == false)
         {
-            StopCoroutine(roaming);
-            StartCoroutine(RunAway());
+            StopCoroutine(behaviour);
+            behaviour = StartCoroutine(RunAway());
         }
     }
 
@@ -49,11 +49,12 @@ public class Squirrel : MonoBehaviour
             yield return null;
         }
 
-        roaming = StartCoroutine(Roam());
+        behaviour = StartCoroutine(Roam());
     }
 
     private IEnumerator RunAway()
     {
+        fleeing = true;
         dogExcitement.Value += 1;
         transform.LookAt(dogPosition.Vector3);
         transform.Rotate(0, 180, 0);
@@ -70,8 +71,8 @@ public class Squirrel : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private bool dogIsFarAway()
+    private bool dogIsClose()
     {
-        return Vector3.Distance(transform.position, dogPosition.Vector3) > 10f;
+        return Vector3.Distance(transform.position, dogPosition.Vector3) < 3f;
     }
 }

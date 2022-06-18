@@ -12,6 +12,8 @@ public class Squirrel : MonoBehaviour
 
     [SerializeField] private Vector3Variable dogPosition;
     [SerializeField] private IntVariable dogExcitement;
+    [SerializeField] private int excitementChange;
+
 
     private Coroutine behaviour;
     private bool fleeing;
@@ -55,7 +57,7 @@ public class Squirrel : MonoBehaviour
     private IEnumerator RunAway()
     {
         fleeing = true;
-        dogExcitement.Value += 1;
+        dogExcitement.Value += excitementChange;
         transform.LookAt(dogPosition.Vector3);
         transform.Rotate(0, 180, 0);
         anim.SetBool("Run", true);

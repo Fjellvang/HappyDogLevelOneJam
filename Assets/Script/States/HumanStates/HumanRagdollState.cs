@@ -27,9 +27,9 @@ namespace Assets.Script.States.HumanStates
         public override void Update(HumanController controller)
         {
             timeInState += Time.deltaTime;
-            if (timeInState >= timeToBeInState)
+            if (timeInState >= timeToBeInState && Input.GetKeyDown(KeyCode.G))
             {
-                //controller.stateMachine.TransitionState(WalkingState); //TODO: Introduce "Getting up" state?
+                controller.stateMachine.TransitionState(WalkingState); //TODO: Introduce "Getting up" state?
             }
         }
 

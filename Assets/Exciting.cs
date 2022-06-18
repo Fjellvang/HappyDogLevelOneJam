@@ -12,6 +12,10 @@ public class Exciting : MonoBehaviour
         if(collision.gameObject.tag == "Dog")
         {
             dogExcitement.Value += excitementChange;
+            if(dogExcitement.Value < 0)
+            {
+                dogExcitement.Value = 0;
+            }
         }
     }
 }

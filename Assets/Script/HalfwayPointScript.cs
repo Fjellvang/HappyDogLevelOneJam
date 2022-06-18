@@ -14,6 +14,6 @@ public class HalfwayPointScript : MonoBehaviour
     void Update()
     {
         var delta = Dog.position - Human.position;
-        transform.position = offSet + Human.position + delta * offSetMultiplier;
+        transform.position = offSet + Human.position + delta.normalized * offSetMultiplier;
     }
 }

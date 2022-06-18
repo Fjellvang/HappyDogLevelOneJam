@@ -14,15 +14,17 @@ public class HumanController : MonoBehaviour
     public HumanStateMachine stateMachine;
     // Start is called before the first frame update
 
-    public Transform Goal;
+    [HideInInspector]
+    public NavMeshAgent navMeshAgent;
+
 
     private void OnEnable()
     {
         stateMachine = new HumanStateMachine(this);
         rigidBody = GetComponent<Rigidbody>();
-        stateMachine.TransitionState(HumanBaseState.WalkingState);
+        navMeshAgent = GetComponent<NavMeshAgent>();
 
-        GetComponent<NavMeshAgent>().destination = Goal.position;
+        stateMachine.TransitionState(HumanBaseState.WalkingState);
     }
 
     // Update is called once per frame

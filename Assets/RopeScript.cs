@@ -21,6 +21,13 @@ public class RopeScript : MonoBehaviour
     [ContextMenu("Set Spring half")]
     public void SetSpringHalf() => SetSpringValue(.1f);
 
+    private void MultiplySpringValue(float multiplier)
+    {
+        foreach (var joint in springJoints)
+        {
+            joint.spring *= multiplier;
+        }
+    }
     private void SetSpringValue(float multiplier = 1)
     {
         foreach (var joint in springJoints)
@@ -41,11 +48,11 @@ public class RopeScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SetSpringHalf();
+            MultiplySpringValue(2);
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            SetSpringInitial();
+            MultiplySpringValue(0.5f);
         }
     }
 }

@@ -4,6 +4,7 @@ namespace Assets.Script.States.HumanStates
 {
     public class HumanWalkingState : HumanBaseState
     {
+        private Vector3 currentGoal = Vector3.zero;
         public override void OnEnterState(HumanController controller)
         {
             controller.transform.rotation = Quaternion.identity;
@@ -12,6 +13,11 @@ namespace Assets.Script.States.HumanStates
             controller.rigidBody.constraints = 
                 UnityEngine.RigidbodyConstraints.FreezeRotationX |
                 UnityEngine.RigidbodyConstraints.FreezeRotationZ;
+
+            controller.navMeshAgent.enabled = true;
+            controller.rigidBody.isKinematic = true;
+
+            SetNewPath(controller);
         }
         public override void Update(HumanController controller)
         {
@@ -20,6 +26,19 @@ namespace Assets.Script.States.HumanStates
             {
                 controller.stateMachine.TransitionState(RagdollState);
             }
+
+            var goalDeltaMagnitude = (controller.transform.position - currentGoal).magnitude;
+            if (goalDeltaMagnitude < 4f)
+            {
+                SetNewPath(controller);
+            }
+        }
+
+        private void SetNewPath(HumanController controller)
+        {
+            var newGoal =  GoalManager.Instance.GetRandomGoal();
+            currentGoal = newGoal;
+            controller.navMeshAgent.SetDestination(newGoal);
         }
     }
 }

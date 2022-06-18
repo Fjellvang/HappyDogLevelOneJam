@@ -19,12 +19,15 @@ namespace Assets.Script.States.HumanStates
             controller.rigidBody.mass = originalMass * 0.1f; // Half the mass so we drag it easier?
             controller.rigidBody.constraints = UnityEngine.RigidbodyConstraints.None;
             timeInState = 0f;
+
+            controller.navMeshAgent.enabled = false;
+            controller.rigidBody.isKinematic = false;
         }
 
         public override void Update(HumanController controller)
         {
             timeInState += Time.deltaTime;
-            if (timeInState >= timeToBeInState)
+            if (timeInState >= timeToBeInState && Input.GetKeyDown(KeyCode.G))
             {
                 controller.stateMachine.TransitionState(WalkingState); //TODO: Introduce "Getting up" state?
             }

@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3872440092088733691, guid: 521848cab41bee44d8274d0d81458517, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5068585043363613573, guid: 521848cab41bee44d8274d0d81458517, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -278,6 +282,10 @@ PrefabInstance:
     - target: {fileID: 8154053788132957615, guid: 521848cab41bee44d8274d0d81458517, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514381340922184684, guid: 521848cab41bee44d8274d0d81458517, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 521848cab41bee44d8274d0d81458517, type: 3}
@@ -383,7 +391,7 @@ MonoBehaviour:
     m_Bits: 64
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 3
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25

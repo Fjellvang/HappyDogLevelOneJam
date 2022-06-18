@@ -18,7 +18,8 @@ public class Movement : MonoBehaviour
         rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         transform.Rotate(new Vector3(0, rotation, 0));
 
-        float speed = excitement.Value;
+        float speed = (1 + excitement.Value * 0.2f) * .5f;
+        Debug.Log(speed);
         anim.SetFloat("Speed", speed);
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);            
     }

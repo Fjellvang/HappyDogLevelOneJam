@@ -80,6 +80,7 @@ MonoBehaviour:
   moveSpeed: 5
   dogPosition: {fileID: 11400000, guid: 28987258f1717aa45a09ea38838a870d, type: 2}
   dogExcitement: {fileID: 11400000, guid: 896d5cd975e2b3a4ba5d37bd88bd77d3, type: 2}
+  excitementChange: 2
 --- !u!1001 &8102934194861759041
 PrefabInstance:
   m_ObjectHideFlags: 0

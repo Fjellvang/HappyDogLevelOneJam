@@ -15,12 +15,8 @@ public class HumanController : MonoBehaviour
     private void OnEnable()
     {
         stateMachine = new HumanStateMachine(this);
-        stateMachine.TransitionState(HumanBaseState.WalkingState);
-    }
-
-    void Start()
-    {
         rigidBody = GetComponent<Rigidbody>();
+        stateMachine.TransitionState(HumanBaseState.WalkingState);
     }
 
     // Update is called once per frame

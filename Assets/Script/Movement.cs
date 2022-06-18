@@ -14,16 +14,14 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Vector3Variable savedPosition;
     [SerializeField] private IntVariable excitement;
-    [SerializeField] private float excitementStrength;
-
+    
     private void Update()
     {
-        rotation = Input.GetAxis("Horizontal") * rotationSpeed * excitementStrength;
+        rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         transform.Rotate(new Vector3(0, rotation, 0));
 
-        float speed = excitement.Value * excitementStrength;
+        float speed = excitement.Value;
         anim.SetFloat("Speed", speed);
-        Debug.Log(speed);
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);            
     }
 

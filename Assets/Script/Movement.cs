@@ -5,8 +5,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    [Range(0.1f, 100f)]
-    [SerializeField] private float moveSpeed;
     [Range(0.1f, 10f)]
     [SerializeField] private float rotationSpeed;
     private float rotation;

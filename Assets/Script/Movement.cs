@@ -14,12 +14,17 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Vector3Variable savedPosition;
     [SerializeField] private IntVariable excitement;
+    [SerializeField] private float excitementStrength;
 
     private void Update()
     {
-        rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        rotation = Input.GetAxis("Horizontal") * rotationSpeed * excitementStrength;
         transform.Rotate(new Vector3(0, rotation, 0));
-        rb.AddForce(transform.forward * moveSpeed * (1 + excitement.Value / 25), ForceMode.Impulse);            
+
+        float speed = excitement.Value * excitementStrength;
+        anim.SetFloat("Speed", speed);
+        Debug.Log(speed);
+        rb.AddForce(transform.forward * speed, ForceMode.Impulse);            
     }
 
     private void LateUpdate()
@@ -29,6 +34,5 @@ public class Movement : MonoBehaviour
             return;
         }
         savedPosition.Vector3 = transform.position;
-        //rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed);
     }
 }

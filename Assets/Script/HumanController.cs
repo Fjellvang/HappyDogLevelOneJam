@@ -24,7 +24,7 @@ public class HumanController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        stateMachine.TransitionState(HumanBaseState.WalkingState);
+        stateMachine.TransitionState(HumanBaseState.RagdollState);
     }
 
     // Update is called once per frame

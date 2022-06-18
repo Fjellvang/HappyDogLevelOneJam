@@ -18,7 +18,7 @@ public class HumanController : MonoBehaviour
     public NavMeshAgent navMeshAgent;
 
 
-    private void OnEnable()
+    private void Start()
     {
         stateMachine = new HumanStateMachine(this);
         rigidBody = GetComponent<Rigidbody>();

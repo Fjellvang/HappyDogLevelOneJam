@@ -19,12 +19,14 @@ public class Squirrel : MonoBehaviour
 
     private IEnumerator Run()
     {
+        anim.SetBool("Run", false);//set the animator to be idle
         if (dogIsFarAway())
         {
             yield return new WaitForSeconds(1);
             // IDLE HERE
-            anim.SetBool("Run", false);
+            
             transform.Rotate(new Vector3(0f, UnityEngine.Random.Range(0, 360), 0f), Space.World);
+            yield return new WaitForSeconds(2.5f);//pause before it staers moving again
         }
         else
         {
@@ -32,12 +34,15 @@ public class Squirrel : MonoBehaviour
             transform.Rotate(0, 180, 0);
         }
 
+        
+        anim.SetBool("Run", true);//set the animator to be running
         // START WALKING HERE
-        anim.SetBool("Run", true);
+
         float timePassed = 0;
-        float endTime = 1;
+        float endTime = 5;
         while (timePassed < endTime)
         {
+            
             rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed);
             timePassed += Time.deltaTime;
             yield return null;

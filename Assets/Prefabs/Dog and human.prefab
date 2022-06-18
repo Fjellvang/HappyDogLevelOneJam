@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959146786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.275, y: 9.452499, z: -9.985}
+  m_LocalPosition: {x: -0.8998, y: 14.3657, z: -23.901}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1730978775596295012}
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dog: {fileID: 3880292752218653925}
   Human: {fileID: 3880292753043754706}
-  offSetMultiplier: -1.25
+  offSetMultiplier: -4.09
   offSet: {x: 0, y: 5, z: 0}
 --- !u!1 &1052026052
 GameObject:

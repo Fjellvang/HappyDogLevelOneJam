@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowRoute : MonoBehaviour
 {
     [SerializeField] private List<Transform> waypoints;
+    [SerializeField] private Rigidbody rb;
     private Queue<Transform> targets;
     private Transform target;
     private void Start()
@@ -24,6 +25,8 @@ public class FollowRoute : MonoBehaviour
             targets.Enqueue(target);
             target = targets.Dequeue();
         }
+
+        transform.position += transform.forward * Time.deltaTime;
 
         transform.LookAt(target);
     }

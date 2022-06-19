@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogExcitement: {fileID: 11400000, guid: 896d5cd975e2b3a4ba5d37bd88bd77d3, type: 2}
-  excitementChange: -1
+  excitementChange: -20
 --- !u!65 &631277240626289846
 BoxCollider:
   m_ObjectHideFlags: 0

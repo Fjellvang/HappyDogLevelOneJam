@@ -27,8 +27,6 @@ public class Movement : MonoBehaviour
             bark.Play();
             speed *= 100;
         }
-
-        Debug.Log(speed);
         anim.SetFloat("Speed", speed);
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);            
     }

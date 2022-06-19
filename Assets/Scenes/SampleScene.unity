@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -356,6 +356,7 @@ MonoBehaviour:
   startButton: {fileID: 2036824633}
   humanAndDog: {fileID: 479060652}
   cinemachineGameObject: {fileID: 410412534}
+  menuParticleSystem: {fileID: 1787862884}
 --- !u!1 &270657944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2861,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2082932836, guid: 033acb4a5e6db7d48812478381034b22, type: 3}
   m_PrefabInstance: {fileID: 1166102781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1787862884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5782771279220832256, guid: 4e97ed39f89aa49e2b83558927189763, type: 3}
+  m_PrefabInstance: {fileID: 1380533579}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1879096498
 GameObject:

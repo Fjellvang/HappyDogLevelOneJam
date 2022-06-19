@@ -13,7 +13,7 @@ public class WinScreen : MonoBehaviour
 
     private void Update()
     {
-        if(dogExcitement.Value >= 0 && bonesCollected.Value == 1)
+        if(dogExcitement.Value >= 100 && bonesCollected.Value == 10)
         {
             winScreen.SetActive(true);
             image.color = new Color(1, 1, 1, 0);

@@ -15,6 +15,6 @@ public class BonesText : MonoBehaviour
 
     private void Update()
     {
-        text.SetText(bonesCollected.Value + "/ 10");
+        text.SetText(bonesCollected.Value + " / 10");
     }
 }

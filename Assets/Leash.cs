@@ -17,7 +17,7 @@ public class Leash : MonoBehaviour
             if (i != 0)
             {
                 leashBones[i].LookAt(leashPivots[i-1].position);
-                leashBones[i].Rotate(new Vector3(90,0,0));
+                leashBones[i].Rotate(new Vector3(-90,0,0));
             }
             
         }

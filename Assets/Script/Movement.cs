@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     private float rotation;
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource bark;
 
     [SerializeField] private Vector3Variable savedPosition;
     [SerializeField] private IntVariable excitement;
@@ -18,7 +19,15 @@ public class Movement : MonoBehaviour
         rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         transform.Rotate(new Vector3(0, rotation, 0));
 
-        float speed = (1 + excitement.Value * 0.2f) * .5f;
+        float speed = (2 + excitement.Value * 0.2f) * .5f;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            bark.pitch = Random.Range(0.9f, 1.3f);
+            bark.Play();
+            speed *= 100;
+        }
+
         Debug.Log(speed);
         anim.SetFloat("Speed", speed);
         rb.AddForce(transform.forward * speed, ForceMode.Impulse);            

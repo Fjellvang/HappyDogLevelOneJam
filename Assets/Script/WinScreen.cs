@@ -11,7 +11,7 @@ public class WinScreen : MonoBehaviour
     {
         if(dogExcitement.Value == 100 && bonesCollected.Value == 10)
         {
-            
+            // do stuff
         }
     }
 }

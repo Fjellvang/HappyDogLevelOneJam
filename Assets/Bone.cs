@@ -20,7 +20,7 @@ public class Bone : MonoBehaviour
             celebrationSound.Play();
             bonesCollected.Value += 1;
             sphereCollider.enabled = false;
-            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(true);
             Destroy(gameObject, 4f);
         }
     }

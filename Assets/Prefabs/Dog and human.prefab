@@ -2760,6 +2760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 9002084555800463327, guid: dfab319fad644014281546f71b74b1ff, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9002084555800463321, guid: dfab319fad644014281546f71b74b1ff, type: 3}
     - {fileID: 9002084555800463326, guid: dfab319fad644014281546f71b74b1ff, type: 3}

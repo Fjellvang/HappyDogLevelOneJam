@@ -9,6 +9,7 @@ public class LadyDogReaction : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private Image image;
+    [SerializeField] private AudioSource giggle;
     private bool dogSpotted;
 
     private void Update()
@@ -17,6 +18,7 @@ public class LadyDogReaction : MonoBehaviour
         {
             dogSpotted = true;
             anim.SetTrigger("Scream");
+            giggle.Play();
             loseScreen.SetActive(true);
             StartCoroutine(FadeIn());
         }
@@ -24,7 +26,7 @@ public class LadyDogReaction : MonoBehaviour
 
     private bool dogIsClose()
     {
-        return Vector3.Distance(transform.position, dogPosition.Vector3) < 3f;
+        return Vector3.Distance(transform.position, dogPosition.Vector3) < 4f;
     }
     private IEnumerator FadeIn()
     {

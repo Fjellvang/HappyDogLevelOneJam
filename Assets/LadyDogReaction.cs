@@ -6,11 +6,13 @@ public class LadyDogReaction : MonoBehaviour
 {
     [SerializeField] private Vector3Variable dogPosition;
     [SerializeField] private Animator anim;
+    private bool dogSpotted;
 
     private void Update()
     {
-        if (dogIsClose())
+        if (dogIsClose() && !dogSpotted)
         {
+            dogSpotted = true;
             anim.SetTrigger("Scream");
         }
     }

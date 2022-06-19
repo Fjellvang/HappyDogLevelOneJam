@@ -3241,6 +3241,7 @@ MonoBehaviour:
   dogExcitement: {fileID: 11400000, guid: 896d5cd975e2b3a4ba5d37bd88bd77d3, type: 2}
   bonesCollected: {fileID: 11400000, guid: e609240c9db315e468713ed96511e970, type: 2}
   winScreen: {fileID: 2104863177}
+  image: {fileID: 2104863179}
 --- !u!4 &1876676511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6823377155770299071, guid: 855e435d8caa2d24abdfc3c55c973780, type: 3}

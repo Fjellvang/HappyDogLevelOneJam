@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Squirrel : MonoBehaviour
 {
-    [SerializeField] Animator anim;
+    [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource sound;
     [SerializeField] private Rigidbody rb;
     [Range(0.1f, 100f)]
     [SerializeField] private float moveSpeed;
@@ -57,6 +58,7 @@ public class Squirrel : MonoBehaviour
     private IEnumerator RunAway()
     {
         fleeing = true;
+        sound.Play();
         dogExcitement.Value += excitementChange;
         transform.LookAt(dogPosition.Vector3);
         transform.Rotate(0, 180, 0);

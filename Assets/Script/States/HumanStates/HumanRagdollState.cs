@@ -20,7 +20,6 @@ namespace Assets.Script.States.HumanStates
             controller.rigidBody.constraints = UnityEngine.RigidbodyConstraints.None;
             timeInState = 0f;
 
-            controller.navMeshAgent.enabled = false;
             controller.rigidBody.isKinematic = false;
         }
 

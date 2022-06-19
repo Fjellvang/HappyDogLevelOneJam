@@ -12,18 +12,12 @@ public class HumanController : MonoBehaviour
 
     [HideInInspector]
     public HumanStateMachine stateMachine;
-    // Start is called before the first frame update
-
-    [HideInInspector]
-    public NavMeshAgent navMeshAgent;
-
 
     private void Start()
     {
         stateMachine = new HumanStateMachine(this);
         rigidBody = GetComponent<Rigidbody>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
-
+        
         stateMachine.TransitionState(HumanBaseState.RagdollState);
     }
 

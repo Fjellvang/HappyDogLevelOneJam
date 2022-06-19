@@ -14,7 +14,6 @@ namespace Assets.Script.States.HumanStates
                 UnityEngine.RigidbodyConstraints.FreezeRotationX |
                 UnityEngine.RigidbodyConstraints.FreezeRotationZ;
 
-            controller.navMeshAgent.enabled = true;
             controller.rigidBody.isKinematic = true;
 
             SetNewPath(controller);
@@ -38,7 +37,6 @@ namespace Assets.Script.States.HumanStates
         {
             var newGoal =  GoalManager.Instance.GetRandomGoal();
             currentGoal = newGoal;
-            controller.navMeshAgent.SetDestination(newGoal);
         }
     }
 }
